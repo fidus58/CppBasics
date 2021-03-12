@@ -5,10 +5,27 @@
 //  Created by Klaus Ahrens on 12.03.21.
 //
 
-#include <iostream>
+/*
+  Demo of:
+    - separate compilation
+    - header and impl files
+*/
+ 
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+#include <iostream>
+#include <string>
+
+#include "A.hpp"
+
+void out(std::string msg){
+    std::cout<<msg<<"\n";
+}
+
+A a;
+
+int main(){
+    A a;     // usual scoping: possible, but not recommended
+    a.tweet();
+    
+    ::a.tweet(); // the global one
 }
