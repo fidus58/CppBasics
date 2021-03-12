@@ -21,7 +21,7 @@ class B : public A {            // inheritance
     const std::string ID;   // per object
     std::string makeID();
 public:
-    std::string myID() { return ID; }
+    std::string myID() override { return ID; }
     void tweet();
     B();         // ctor
     ~B();        // dtor

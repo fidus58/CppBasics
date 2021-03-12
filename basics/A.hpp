@@ -28,7 +28,7 @@ class A {
     const std::string ID;   // per object
     std::string makeID();
 public:
-    std::string myID() { return ID; }
+    virtual std::string myID() { return ID; }
     void tweet();
     A();         // ctor
     ~A();        // dtor

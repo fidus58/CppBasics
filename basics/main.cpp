@@ -18,12 +18,8 @@
 #include "A.hpp"
 #include "B.hpp"
 
-void out(std::string msg){
-    std::cout<<msg<<"\n";
-}
-
 int main(){
-    B* pb = new B;
-    pb->tweet();  // leaks !
-    // delete pb;
+    B b;
+    A& ra = b;
+    ra.tweet();  // binds at run time
 }
