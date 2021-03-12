@@ -14,18 +14,26 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "A.hpp"
 
-void out(std::string msg){
-    std::cout<<msg<<"\n";
-}
-
-A a;
-
 int main(){
-    A a;     // usual scoping: possible, but not recommended
-    a.tweet();
+    A a0;
     
-    ::a.tweet(); // the global one
+    A a1 = a0; // one or two objects?
+//
+//    a0.tweet();
+//    a1.tweet();
+//
+//    A as[] = {a0, a1};
+//    as[0].tweet();
+//    as[1].tweet();
+    
+//    std::vector<A> av; // = {a0, a1};
+//    av.reserve(2);
+//    av.push_back(a0);
+//    av.push_back(a1);
+//    av[0].tweet();
+//    av[1].tweet();
 }
