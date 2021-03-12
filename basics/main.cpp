@@ -14,16 +14,28 @@
 
 #include <iostream>
 #include <string>
+#include <memory>
 
 #include "A.hpp"
 #include "B.hpp"
 
-void out(std::string msg){
-    std::cout<<msg<<"\n";
-}
-
 int main(){
-    B* pb = new B;
-    pb->tweet();  // leaks !
-    // delete pb;
+    void out(std::string);
+    {   out("----");
+        std::unique_ptr<B> pb (new B); // why not = new B;
+        pb->tweet();  // no leak
+        // std::unique_ptr<B> pb1 (pb);
+        std::unique_ptr<B> pb1 (std::move(pb)); // take ownership
+        pb1->tweet();
+        //pb->tweet();
+        out("----");
+    }
+    {   out("----");
+        std::shared_ptr<B> pb (new B); // why not = new B;
+        pb->tweet();  // no leak
+        std::shared_ptr<B> pb1 (pb); // take ownership
+        pb1->tweet();
+        pb->tweet();
+        out("----");
+    }
 }
