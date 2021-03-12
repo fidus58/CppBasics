@@ -8,5 +8,6 @@
 #include <iostream>
 #include <string>
 
-#include <iostream>
-
+void out(std::string msg){
+    std::cout<<msg<<"\n";
+}

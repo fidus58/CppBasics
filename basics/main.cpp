@@ -21,5 +21,7 @@
 int main(){
     B b;
     A& ra = b;
-    ra.tweet();  // binds at run time
+    ra.tweet();    // binds at run time
+    
+    ra.A::tweet(); // binds at compile time
 }
