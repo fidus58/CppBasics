@@ -25,5 +25,5 @@ void out(std::string msg){
 int main(){
     B b;
     b.tweet();
-    b.A::tweet();
+    b.myA.tweet();
 }

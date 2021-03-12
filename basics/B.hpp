@@ -13,7 +13,7 @@
 
 #include "A.hpp"
 
-class B : public A {            // inheritance
+class B {
     // separate naming scheme for B
     static const char id = 'B'; // per class and const
     static int number;          // per class ascending
@@ -25,6 +25,8 @@ public:
     void tweet();
     B();         // ctor
     ~B();        // dtor
+//private:
+    A myA;
 };
 
 #endif /* B_hpp */
