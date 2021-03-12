@@ -5,6 +5,13 @@
 //  Created by Klaus Ahrens on 12.03.21.
 //
 
+/*
+  Demo of:
+    - separate compilation
+    - include ALL needed headers
+    - define missing member functions
+*/
+
 #include "A.hpp"
 
 #include <iostream>
