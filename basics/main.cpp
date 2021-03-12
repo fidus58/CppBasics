@@ -16,16 +16,14 @@
 #include <string>
 
 #include "A.hpp"
+#include "B.hpp"
 
 void out(std::string msg){
     std::cout<<msg<<"\n";
 }
 
-A a;
-
 int main(){
-    A a;     // usual scoping: possible, but not recommended
-    a.tweet();
-    
-    ::a.tweet(); // the global one
+    B b;
+    b.tweet();
+    b.A::tweet();
 }
