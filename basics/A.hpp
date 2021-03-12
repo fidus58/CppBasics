@@ -14,13 +14,14 @@ class A {
     static const char id = 'A'; // per class and const
     static int number;          // per class ascending
 
-    const std::string ID;   // per object
+    std::string ID;   // per object
     std::string makeID();
 public:
     std::string myID() { return ID; }
     void tweet();
     A();         // ctor
     A(const A&); // copy-ctor !
+    A(A&&);      // move-ctor
     ~A();        // dtor
 };
 

@@ -17,7 +17,7 @@
 #include <iostream>
 #include <string>
 
-void out(std::string);
+#include "out.hpp"
 
 std::string A::makeID() {
         std::string ID;
@@ -30,7 +30,14 @@ void A::tweet() { std::cout<<myID()<<" alive\n"; }
     
 A::A(): ID(makeID()) { out(ID+" created"); }
 
-A::A(const A& other): ID(makeID()) { out(ID+" created"); }
+A::A(const A& other): ID(makeID()+" copy of "+other.ID) {
+    out(ID);
+}
+
+A::A(A&& other): ID(makeID()+" moved from "+other.ID) {
+    using namespace std::string_literals;
+    other.ID.assign("moved from"s);
+    out(ID); }
 
 A::~A() { out(ID+" destroyed"); }
 
