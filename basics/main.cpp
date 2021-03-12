@@ -24,6 +24,17 @@ void out(std::string msg){
 
 int main(){
     B b;
-    b.tweet();
-    b.A::tweet();
+    
+    A& ra = b; // a reference, every B is an A
+    ra.tweet();
+    
+    B& rb = b;
+    rb.tweet();
+    
+    A* pa = &b; // another kind of reference: a pointer
+    pa->tweet(); // same as (*pa).tweet();
+    
+    B* pb = &b;
+    pb->tweet();
+    
 }
