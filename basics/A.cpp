@@ -25,4 +25,4 @@ A::A(): ID(makeID()) { out(ID+" created"); }
 
 A::~A() { out(ID+" destroyed"); }
 
-int A::number = 0;
+int A::number = 0; // not in the header!
