@@ -17,10 +17,6 @@
 
 #include "A.hpp"
 
-void out(std::string msg){
-    std::cout<<msg<<"\n";
-}
-
 A a;
 
 int main(){

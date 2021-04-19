@@ -17,7 +17,9 @@
 #include <iostream>
 #include <string>
 
-void out(std::string);
+void out(std::string msg){
+    std::cout<<msg<<"\n";
+}
 
 std::string A::makeID() {
         std::string ID;
