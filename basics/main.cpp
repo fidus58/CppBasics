@@ -30,7 +30,7 @@ class A {
     static int number;          // per class ascending
 
     const std::string ID;   // per object
-    std::string makeID() {  // private, not for external use
+    static std::string makeID() {  // private, not for external use
         std::string ID;     // local var: an empty string
         ID.push_back(id);               // letter
         ID += std::to_string(number++); // number
@@ -54,10 +54,10 @@ public:
 int A::number = 0;
 
 int main(){
-    A a;     // usual scoping: possible, but not recommended
+    A a;
     a.tweet();
     {
-        A a;
+        A a; // usual scoping: possible, but not recommended
         a.tweet();
     }
     ::a.tweet(); // the global one
