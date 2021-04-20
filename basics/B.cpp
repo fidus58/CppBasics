@@ -27,6 +27,12 @@ void B::tweet() {
     
 B::B(): ID(makeID()) { out(ID+" created"); }
 
+/*
+B::B(const B& b)
+: ID(makeID()+" (copy of "+b.myID()+")")
+{ out(ID+" created"); }
+*/
+
 B::~B() { out(ID+" destroyed"); }
 
 int B::number = 0;

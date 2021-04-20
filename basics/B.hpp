@@ -24,6 +24,7 @@ public:
     std::string myID() { return ID; }
     void tweet();
     B();         // ctor
+    // B(const B&); // copy ctor
     ~B();        // dtor
 };
 
