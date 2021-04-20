@@ -19,7 +19,7 @@ class B : public A {            // inheritance
     static int number;          // per class ascending
 
     const std::string ID;   // per object
-    std::string makeID();
+    static std::string makeID();
 public:
     std::string myID() { return ID; }
     void tweet();

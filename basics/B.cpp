@@ -19,7 +19,11 @@ std::string B::makeID() {
         return ID;
 }
 
-void B::tweet() { std::cout<<myID()<<" alive\n"; }
+void B::tweet() {
+    std::cout<<myID()<<" alive\n";
+    //std::cout<<"the A in me is "<<A::myID()<<"\n";
+
+}
     
 B::B(): ID(makeID()) { out(ID+" created"); }
 
