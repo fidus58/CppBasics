@@ -21,8 +21,8 @@
 int main(){
     A a0;
     
-    A a1 = a0;
-    // A a1 = std::move(a0); // one or two objects?
+    // A a1 = a0;
+    A a1 = std::move(a0); // one or two objects?
 //
 //    a0.tweet();
 //    a1.tweet();

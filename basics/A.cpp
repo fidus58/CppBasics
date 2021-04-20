@@ -34,9 +34,9 @@ A::A(const A& other): ID(makeID()+" copy of "+other.ID) {
     out(ID);
 }
 
-A::A(A&& other): ID(makeID()+" moved from "+other.ID) {
+A::A(A&& other): ID(makeID()+" (moved from "+other.ID+")") {
     using namespace std::string_literals;
-    other.ID.assign("moved from"s);
+    other.ID.append(" (moved)");
     out(ID); }
 
 A::~A() { out(ID+" destroyed"); }
