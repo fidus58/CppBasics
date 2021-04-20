@@ -34,22 +34,31 @@ class A {
         std::string ID;     // local var: an empty string
         ID.push_back(id);               // letter
         ID += std::to_string(number++); // number
-        return ID;
+        return ID; //A0
     }
 public:
     std::string myID() { return ID; }
     void tweet() { std::cout<<myID()<<" alive\n"; }
-    A(): ID(makeID()) // initialization !
+    A(): ID{makeID()} // initialization !
     {
         // ID = makeID(); // ???
         out(ID+" created");
-        
     }                  // ctor
+    A(std::string s): ID{s} // initialization !
+    {
+        // ID = makeID(); // ???
+        out(ID+" created");
+    }
     ~A() { out(ID+" destroyed"); }           // dtor
     // in real life, ctors and dtors should NEVER cause
-    // global effects (as aoutputs)! we do this for the sake
+    // global effects (as outputs)! we do this for the sake
     // of life time inspection.
-} a;// mind the ;
+} a{"123"};// mind the ;
+
+// int i,j,k,l;
+// i = (j+k)+l;
+// int tmp = j + k;
+// i = tmp + l;
 
 int A::number = 0;
 
@@ -60,5 +69,6 @@ int main(){
         A a; // usual scoping: possible, but not recommended
         a.tweet();
     }
+    // a.tweet();
     ::a.tweet(); // the global one
 }
