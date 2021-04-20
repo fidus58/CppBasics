@@ -31,6 +31,7 @@ public:
     std::string myID() { return ID; }
     void tweet();
     A();         // ctor
+    // A(const A&); // copy ctor
     ~A();        // dtor
 };
 

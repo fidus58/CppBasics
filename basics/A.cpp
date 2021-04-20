@@ -23,6 +23,12 @@ void A::tweet() { std::cout<<myID()<<" alive\n"; }
     
 A::A(): ID(makeID()) { out(ID+" created"); }
 
+/*
+A::A(const A& a)
+: ID(makeID()+" (copy of "+a.myID()+")")
+{ out(ID+" created"); }
+*/
+
 A::~A() { out(ID+" destroyed"); }
 
 int A::number = 0;
